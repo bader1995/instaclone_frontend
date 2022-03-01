@@ -15,7 +15,7 @@ export const AppFeed = () => {
 
 const containerStyle = {
   backgroundColor: '#FAFAFA',
-  minHeight: '800px'
+  paddingBottom: '100px'
 }
 
 const postsContainerStyle = {

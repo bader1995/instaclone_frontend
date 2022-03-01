@@ -9,11 +9,11 @@ export const AppTopBar = () => {
         <img src={MainLogo} style={logoStyle} />
         <AppInput placeholder="Search" customeStyle={searchInputStyle}/>
         <div style={iconsContainer}>
-            <FaHome size={25}/>
-            <FaMailBulk size={25}/>
-            <FaPlusSquare size={25}/>
-            <FaMap size={25}/>
-            <FaHeart size={25} />
+            <FaHome size={20} />
+            <FaMailBulk size={20} />
+            <FaPlusSquare size={20}/>
+            <FaMap size={20}/>
+            <FaHeart size={20} />
         </div>
     </div>
   )
@@ -37,12 +37,14 @@ const logoStyle = {
 
 const searchInputStyle = {
     maxWidth: '250px',
+    minWidth: '50px',
     display: 'inline',
-    marginTop: '0px'
+    marginTop: '0px',
+    marginRight: '10px'
 }
 
 const iconsContainer = {
     marginTop: '5px',
     display: 'grid',
-    gridTemplateColumns: 'auto auto auto auto auto auto auto auto',
+    gridTemplateColumns: 'auto auto auto auto auto',
 }
