@@ -1,10 +1,10 @@
 import './index.css';
-import { AppLogin } from './screens/AppLogin';
+import { AppFeed } from './screens/AppFeed';
 
 function App() {
 
   return (
-    <AppLogin />
+    <AppFeed />
   );
 }
 
