@@ -8,8 +8,8 @@ export const AppLogin = () => {
     <div style={container0}>
         <div style={container1}>
             <img src={MainLogo} style={imgLogo} />
-            <AppInput type="text" placeholder="Username" />
-            <AppInput customeStyle={{ marginTop: 5 }} type="password" placeholder="Password" />
+            <AppInput type="text" placeholder="Username" customeStyle={inputStyle} />
+            <AppInput customeStyle={inputStyle} type="password" placeholder="Password" />
             <AppSubmitButton customeStyle={{ marginTop: 10 }} value="Log In" color="#0095F6" />
             <div style={seperator}></div>
             <p style={forgotPassStyle}>Forgot password ?</p>
@@ -69,4 +69,10 @@ const forgotPassStyle = {
     margin: '0 auto',
     textAlign:'center',
     marginTop: '20px'
+}
+
+const inputStyle = {
+    width: '100%',
+    marginTop: '5px',
+    border: 'solid 1px #DEDEDE'
 }

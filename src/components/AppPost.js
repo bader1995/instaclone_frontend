@@ -4,9 +4,9 @@ import ProfilePicture from '../assets/img/profile.jpg'
 import { FaHeart, FaSmile, FaComment, FaFacebookMessenger, FaShare } from 'react-icons/fa';
 import { AppInput } from './AppInput';
 
-export const AppPost = () => {
+export const AppPost = ({ customeStyle }) => {
   return (
-    <div style={containerStyle}>
+    <div style={{ ...containerStyle, ...customeStyle }}>
         <div style={profileContainer}>
             <CircleImage src={ProfilePicture} customeStyle={profilePictureStyle} />
             <p style={labelStyle}>Jhon Smith</p>
@@ -38,7 +38,10 @@ export const AppPost = () => {
 
 const containerStyle = {
     backgroundColor: 'white',
-    border: 'solid 1px #DBDBDB'
+    border: 'solid 1px #DBDBDB',
+    minWidth: '600px',
+    maxWidth: '800px',
+    marginBottom: '25px'
 }
 
 const profilePictureStyle = {
