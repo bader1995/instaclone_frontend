@@ -4,13 +4,13 @@ import ProfilePicture from '../assets/img/profile.jpg'
 import { FaHeart, FaSmile, FaComment, FaFacebookMessenger, FaShare } from 'react-icons/fa';
 import { AppInput } from './AppInput';
 
-export const AppPost = ({ customeStyle }) => {
+export const AppPost = ({ customeStyle, onOptionClick }) => {
   return (
     <div style={{ ...containerStyle, ...customeStyle }}>
         <div style={profileContainer}>
             <CircleImage src={ProfilePicture} customeStyle={profilePictureStyle} />
             <p style={labelStyle}>Jhon Smith</p>
-            <p style={optionsIconStyle}>...</p>
+            <p style={optionsIconStyle} onClick={() => onOptionClick()}>...</p>
         </div>
         <div style={contentContainerStyle}>
           <img src={ProfilePicture} style={assetContentStyle} />

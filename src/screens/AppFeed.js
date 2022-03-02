@@ -3,6 +3,7 @@ import { AppTopBar } from '../components/AppTopBar'
 import { AppPost } from '../components/AppPost'
 import { CircleImage } from '../components/CircleImage'
 import ProfilePicture from '../assets/img/profile.jpg'
+import { ActionModal } from '../components/ActionModal'
 
 export const AppFeed = () => {
 
@@ -11,6 +12,7 @@ export const AppFeed = () => {
     winHeight: window.innerHeight,
   })
   const [showExtra, setShowExtra] = useState(true)
+  const [actionModal, setActionModal] = useState(false)
 
   const detectSize = () => {
     detectHW({
@@ -42,10 +44,10 @@ export const AppFeed = () => {
     <div style={containerStyle}>
 
         <AppTopBar showExtra={showExtra} />
-
+        { actionModal && <ActionModal onCloseClick={() => setActionModal(false)} /> }
         <div style={postsContainerStyle}>
           <div style={{ display: 'grid', gridTemplateColumns: 'auto' }}>
-            <AppPost />
+            <AppPost onOptionClick={() => setActionModal(true)} />
             <AppPost />
             <AppPost />
             <AppPost />
