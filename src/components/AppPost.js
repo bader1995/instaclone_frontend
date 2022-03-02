@@ -3,6 +3,7 @@ import { CircleImage } from './CircleImage'
 import ProfilePicture from '../assets/img/profile.jpg'
 import { FaHeart, FaSmile, FaComment, FaFacebookMessenger, FaShare } from 'react-icons/fa';
 import { AppInput } from './AppInput';
+import { BiDotsHorizontalRounded } from 'react-icons/bi';
 
 export const AppPost = ({ customeStyle, onOptionClick }) => {
   return (
@@ -10,7 +11,7 @@ export const AppPost = ({ customeStyle, onOptionClick }) => {
         <div style={profileContainer}>
             <CircleImage src={ProfilePicture} customeStyle={profilePictureStyle} />
             <p style={labelStyle}>Jhon Smith</p>
-            <p style={optionsIconStyle} onClick={() => onOptionClick()}>...</p>
+            <BiDotsHorizontalRounded style={optionsIconStyle} onClick={() => onOptionClick()} />
         </div>
         <div style={contentContainerStyle}>
           <img src={ProfilePicture} style={assetContentStyle} />
@@ -52,7 +53,7 @@ const profilePictureStyle = {
 
 const profileContainer = {
   display: 'grid',
-  gridTemplateColumns: '13% 77% 10%'
+  gridTemplateColumns: '13% 80% 8%'
 }
 
 const labelStyle = {
@@ -61,7 +62,7 @@ const labelStyle = {
 }
 
 const optionsIconStyle = {
-  fontSize: '16px',
+  fontSize: '20px',
   marginTop: '25px',
   cursor: 'pointer'
 }

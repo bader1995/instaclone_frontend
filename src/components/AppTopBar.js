@@ -1,26 +1,35 @@
-import React from 'react'
+import React, { useState } from 'react'
 import MainLogo from '../assets/img/instagram.png'
 import { AppInput } from '../components/AppInput'
-import { FaHome, FaMailBulk, FaPlusSquare, FaMap, FaHeart,  } from 'react-icons/fa';
+import { AiOutlineHeart, AiOutlineHome, AiOutlineMessage  } from 'react-icons/ai';
+import { IoIosAddCircleOutline } from 'react-icons/io';
+import { ImSafari } from 'react-icons/im';
 import { CircleImage } from './CircleImage';
 import ProfilePicture from '../assets/img/profile.jpg'
+import { AddPost } from './AddPost';
 
 export const AppTopBar = ({ showExtra }) => {
+
+  const [showCreate, setShowCreate] = useState(false)
+
   return (
-    <div style={containerStyle}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'auto 60% auto', maxWidth: '50%', margin: '0 auto' }}>
-            <img src={MainLogo} style={logoStyle} />
-            { showExtra && <AppInput placeholder="Search" customeStyle={searchInputStyle}/> }
-            <div style={iconsContainer}>
-                <FaHome size={25} style={iconStyle} />
-                <FaMailBulk size={25} style={iconStyle} />
-                <FaPlusSquare size={25} style={iconStyle}/>
-                <FaMap size={25} style={iconStyle}/>
-                <FaHeart size={25} style={iconStyle} />
-                <CircleImage customeStyle={{ width: '20px', height: '20px', cursor: 'pointer' }} src={ProfilePicture} />
+    <>
+        { showCreate && <AddPost onCloseClick={() => setShowCreate(false)} /> }
+        <div style={containerStyle}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'auto 60% auto', maxWidth: '50%', margin: '0 auto' }}>
+                <img src={MainLogo} style={logoStyle} />
+                { showExtra && <AppInput placeholder="Search" customeStyle={searchInputStyle}/> }
+                <div style={iconsContainer}>
+                    <AiOutlineHome size={25} style={iconStyle} />
+                    <AiOutlineMessage size={25} style={iconStyle} />
+                    <IoIosAddCircleOutline size={25} style={iconStyle} onClick={() => setShowCreate(true)} />
+                    <ImSafari size={21} style={{ ...iconStyle, marginTop: '2px' }}/>
+                    <AiOutlineHeart size={25} style={iconStyle} />
+                    <CircleImage customeStyle={{ width: '20px', height: '20px', cursor: 'pointer' }} src={ProfilePicture} />
+                </div>
             </div>
         </div>
-    </div>
+    </>
   )
 }
 
