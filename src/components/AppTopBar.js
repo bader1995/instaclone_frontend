@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import MainLogo from '../assets/img/instagram.png'
 import { AppInput } from '../components/AppInput'
 import { AiOutlineHeart, AiOutlineHome, AiOutlineMessage  } from 'react-icons/ai';
@@ -7,21 +7,53 @@ import { ImSafari } from 'react-icons/im';
 import { CircleImage } from './CircleImage';
 import ProfilePicture from '../assets/img/profile.jpg'
 import { AddPost } from './AddPost';
+import { Link } from 'react-router-dom';
 
-export const AppTopBar = ({ showExtra }) => {
+export const AppTopBar = ({ customeStyle }) => {
 
   const [showCreate, setShowCreate] = useState(false)
+  const [showExtra, setShowExtra] = useState(true)
+  const [windowDimenion, detectHW] = useState({
+    winWidth: window.innerWidth,
+    winHeight: window.innerHeight,
+  })
+
+  const detectSize = () => {
+    detectHW({
+      winWidth: window.innerWidth,
+      winHeight: window.innerHeight,
+    })
+  }
+
+  useEffect(() => {
+    window.addEventListener('resize', detectSize)
+
+    return () => {
+      window.removeEventListener('resize', detectSize)
+    }
+  }, [windowDimenion])
+
+  useEffect(() => {
+    if(windowDimenion.winWidth > 1080)
+    {
+      setShowExtra(true)
+    }
+    else
+    {
+      setShowExtra(false)
+    }
+  }, [windowDimenion])
 
   return (
     <>
         { showCreate && <AddPost onCloseClick={() => setShowCreate(false)} /> }
-        <div style={containerStyle}>
+        <div style={{ ...containerStyle, ...customeStyle }}>
             <div style={{ display: 'grid', gridTemplateColumns: 'auto 60% auto', maxWidth: '50%', margin: '0 auto' }}>
                 <img src={MainLogo} style={logoStyle} />
                 { showExtra && <AppInput placeholder="Search" customeStyle={searchInputStyle}/> }
                 <div style={iconsContainer}>
-                    <AiOutlineHome size={25} style={iconStyle} />
-                    <AiOutlineMessage size={25} style={iconStyle} />
+                    <Link exact to="/"><AiOutlineHome size={25} style={iconStyle} /></Link>
+                    <Link to="/direct/inbox/"><AiOutlineMessage size={25} style={iconStyle} /></Link>
                     <IoIosAddCircleOutline size={25} style={iconStyle} onClick={() => setShowCreate(true)} />
                     <ImSafari size={21} style={{ ...iconStyle, marginTop: '2px' }}/>
                     <AiOutlineHeart size={25} style={iconStyle} />
@@ -71,5 +103,6 @@ const iconsContainer = {
 }
 
 const iconStyle = {
-    cursor: 'pointer'
+    cursor: 'pointer',
+    color: 'black'
 }

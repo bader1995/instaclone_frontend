@@ -11,6 +11,7 @@ export const AppFeed = () => {
     winWidth: window.innerWidth,
     winHeight: window.innerHeight,
   })
+
   const [showExtra, setShowExtra] = useState(true)
   const [actionModal, setActionModal] = useState(false)
 
@@ -43,7 +44,7 @@ export const AppFeed = () => {
   return (
     <div style={containerStyle}>
 
-        <AppTopBar showExtra={showExtra} />
+        <AppTopBar />
         { actionModal && <ActionModal onCloseClick={() => setActionModal(false)} /> }
         <div style={postsContainerStyle}>
           <div style={{ display: 'grid', gridTemplateColumns: 'auto' }}>
