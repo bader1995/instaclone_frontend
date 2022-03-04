@@ -4,8 +4,11 @@ import { AppPost } from '../components/AppPost'
 import { CircleImage } from '../components/CircleImage'
 import ProfilePicture from '../assets/img/profile.jpg'
 import { ActionModal } from '../components/ActionModal'
+import { ModalPost } from "../components/ModalPost"
 
 export const AppFeed = () => {
+
+  const [showModalPost, setShowModalPost] = useState(false);
 
   const [windowDimenion, detectHW] = useState({
     winWidth: window.innerWidth,
@@ -43,15 +46,12 @@ export const AppFeed = () => {
 
   return (
     <div style={containerStyle}>
-
+        { showModalPost && <ModalPost onCloseClick={() => setShowModalPost(false)} /> }
         <AppTopBar />
         { actionModal && <ActionModal onCloseClick={() => setActionModal(false)} /> }
         <div style={postsContainerStyle}>
           <div style={{ display: 'grid', gridTemplateColumns: 'auto' }}>
-            <AppPost onOptionClick={() => setActionModal(true)} />
-            <AppPost />
-            <AppPost />
-            <AppPost />
+            <AppPost onOptionClick={() => setActionModal(true)} onImageClick={() => setShowModalPost(true)} />
           </div>
 
           {
@@ -135,7 +135,6 @@ const containerStyle = {
 }
 
 const postsContainerStyle = {
-  paddingTop: '30px',
   display: 'grid',
   gridTemplateColumns: 'auto auto',
   paddingTop: '100px',

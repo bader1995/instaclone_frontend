@@ -1,11 +1,12 @@
 import React from 'react'
 import { CircleImage } from './CircleImage'
 import ProfilePicture from '../assets/img/profile.jpg'
-import { FaHeart, FaSmile, FaComment, FaFacebookMessenger, FaShare } from 'react-icons/fa';
+import { FaSmile, FaComment, FaFacebookMessenger, FaShare } from 'react-icons/fa';
 import { AppInput } from './AppInput';
 import { BiDotsHorizontalRounded } from 'react-icons/bi';
+import {AiOutlineComment, AiOutlineHeart, AiOutlineMessage, AiOutlineShareAlt, AiOutlineSmile} from "react-icons/ai";
 
-export const AppPost = ({ customeStyle, onOptionClick }) => {
+export const AppPost = ({ customeStyle, onOptionClick, onImageClick}) => {
   return (
     <div style={{ ...containerStyle, ...customeStyle }}>
         <div style={profileContainer}>
@@ -13,15 +14,15 @@ export const AppPost = ({ customeStyle, onOptionClick }) => {
             <p style={labelStyle}>Jhon Smith</p>
             <BiDotsHorizontalRounded style={optionsIconStyle} onClick={() => onOptionClick()} />
         </div>
-        <div style={contentContainerStyle}>
+        <div style={contentContainerStyle} onClick={() => onImageClick()}>
           <img src={ProfilePicture} style={assetContentStyle} />
         </div>
         <div style={actionSectionStyle}>
-          <FaHeart style={actionIconStyle} />
-          <FaComment style={actionIconStyle} />
-          <FaFacebookMessenger style={actionIconStyle} />
+          <AiOutlineHeart style={actionIconStyle} />
+          <AiOutlineComment style={actionIconStyle} />
+          <AiOutlineMessage style={actionIconStyle} />
           <p style={actionIconStyle}>. . .</p>
-          <FaShare style={actionIconStyle} />
+          <AiOutlineShareAlt style={actionIconStyle} />
         </div>
         <div style={interactionsStyle}>
           <p style={{ marginBottom: '10px' }}>12, 045 Likes</p>
@@ -29,7 +30,7 @@ export const AppPost = ({ customeStyle, onOptionClick }) => {
           <p style={{ color: 'grey', cursor: 'pointer' }}>View all 24 comments ...</p>
         </div>
         <div style={commentSectionContainer}>
-          <FaSmile style={{ fontSize: 23, margin: '0 auto', marginTop: '10px' }} />
+          <AiOutlineSmile style={{ fontSize: 23, margin: '0 auto', marginTop: '10px' }} />
           <AppInput type="text" placeholder="Add a comment ..." customeStyle={commentInputStyle} />
           <p style={postButtonStyle}>Post</p>
         </div>
@@ -68,7 +69,7 @@ const optionsIconStyle = {
 }
 
 const contentContainerStyle = {
-
+    cursor: 'pointer'
 }
 
 const assetContentStyle = {
@@ -82,7 +83,7 @@ const actionSectionStyle = {
 }
 
 const actionIconStyle = {
-  fontSize: 20,
+  fontSize: 25,
   margin: '0 auto',
   margin: '15px',
   textAlign: 'center',
