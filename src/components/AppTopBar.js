@@ -8,11 +8,15 @@ import { CircleImage } from './CircleImage';
 import ProfilePicture from '../assets/img/profile.jpg'
 import { AddPost } from './AddPost';
 import { Link } from 'react-router-dom';
+import {LikesNotification} from "./LikesNotification";
+import {AppProfileSection} from "./AppProfileSection";
 
 export const AppTopBar = ({ customeStyle }) => {
 
   const [showCreate, setShowCreate] = useState(false)
+  const [showNotification, setShowNotification] = useState(false)
   const [showExtra, setShowExtra] = useState(true)
+  const [showProfilInfo, setshowProfilInfo] = useState(false);
   const [windowDimenion, detectHW] = useState({
     winWidth: window.innerWidth,
     winHeight: window.innerHeight,
@@ -49,18 +53,24 @@ export const AppTopBar = ({ customeStyle }) => {
         { showCreate && <AddPost onCloseClick={() => setShowCreate(false)} /> }
         <div style={{ ...containerStyle, ...customeStyle }}>
             <div style={{ display: 'grid', gridTemplateColumns: 'auto 60% auto', maxWidth: '50%', margin: '0 auto' }}>
-                <img src={MainLogo} style={logoStyle} />
+                <Link exact to="/">
+                    <img src={MainLogo} style={logoStyle} />
+                </Link>
                 { showExtra && <AppInput placeholder="Search" customeStyle={searchInputStyle}/> }
                 <div style={iconsContainer}>
                     <Link exact to="/"><AiOutlineHome size={25} style={iconStyle} /></Link>
                     <Link to="/direct/inbox/"><AiOutlineMessage size={25} style={iconStyle} /></Link>
                     <IoIosAddCircleOutline size={25} style={iconStyle} onClick={() => setShowCreate(true)} />
-                    <ImSafari size={21} style={{ ...iconStyle, marginTop: '2px' }}/>
-                    <AiOutlineHeart size={25} style={iconStyle} />
-                    <CircleImage customeStyle={{ width: '20px', height: '20px', cursor: 'pointer' }} src={ProfilePicture} />
+                    <Link to="/explore"><ImSafari size={21} style={{ ...iconStyle, marginTop: '2px' }}/></Link>
+                    <AiOutlineHeart size={25} style={iconStyle} onClick={() => setShowNotification(!showNotification)} />
+                    <div onClick={() => setshowProfilInfo(!showProfilInfo)}>
+                        <CircleImage customeStyle={{ width: '20px', height: '20px', cursor: 'pointer' }} src={ProfilePicture} />
+                    </div>
                 </div>
             </div>
         </div>
+        { showNotification && <LikesNotification /> }
+        { showProfilInfo && <AppProfileSection /> }
     </>
   )
 }

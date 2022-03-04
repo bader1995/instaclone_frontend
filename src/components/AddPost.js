@@ -6,10 +6,10 @@ import { AiOutlineClose } from 'react-icons/ai';
 export const AddPost = ({ onCloseClick }) => {
   return (
     <div style={containerStyle}>
+        <AiOutlineClose size={30} style={{ marginTop: '12px', marginRight: '15px', cursor: 'pointer', float: 'right', color: 'white' }} onClick={() => onCloseClick()} />
         <div style={actionStyle}>
             <div style={{ display: 'grid', gridTemplateColumns: 'auto 6%', textAlign: 'center', borderBottom: 'solid 1px #DBDBDB', height: '45px' }}>
                 <p style={{ fontSize: '16px', fontWeight: '400', marginTop: '15px' }}>Create new post</p>
-                <AiOutlineClose size={20} style={{ marginTop: '12px', cursor: 'pointer' }} onClick={() => onCloseClick()} />
             </div>
             <div style={{ textAlign: 'center' }}>
                 <IoIosImages style={{ fontSize: '80px' }} />

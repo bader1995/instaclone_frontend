@@ -52,6 +52,16 @@ export const AppFeed = () => {
         <div style={postsContainerStyle}>
           <div style={{ display: 'grid', gridTemplateColumns: 'auto' }}>
             <AppPost onOptionClick={() => setActionModal(true)} onImageClick={() => setShowModalPost(true)} />
+            <AppPost onOptionClick={() => setActionModal(true)} onImageClick={() => setShowModalPost(true)} />
+            <AppPost onOptionClick={() => setActionModal(true)} onImageClick={() => setShowModalPost(true)} />
+            <AppPost onOptionClick={() => setActionModal(true)} onImageClick={() => setShowModalPost(true)} />
+            <AppPost onOptionClick={() => setActionModal(true)} onImageClick={() => setShowModalPost(true)} />
+            <AppPost onOptionClick={() => setActionModal(true)} onImageClick={() => setShowModalPost(true)} />
+            <AppPost onOptionClick={() => setActionModal(true)} onImageClick={() => setShowModalPost(true)} />
+            <AppPost onOptionClick={() => setActionModal(true)} onImageClick={() => setShowModalPost(true)} />
+            <AppPost onOptionClick={() => setActionModal(true)} onImageClick={() => setShowModalPost(true)} />
+            <AppPost onOptionClick={() => setActionModal(true)} onImageClick={() => setShowModalPost(true)} />
+            <AppPost onOptionClick={() => setActionModal(true)} onImageClick={() => setShowModalPost(true)} />
           </div>
 
           {

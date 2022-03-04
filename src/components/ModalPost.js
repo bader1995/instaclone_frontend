@@ -2,8 +2,14 @@ import React, {useState} from 'react'
 import ProfilePicture from '../assets/img/profile.jpg'
 import {CircleImage} from "./CircleImage";
 import {BiDotsHorizontalRounded} from "react-icons/bi";
-import {AiOutlineClose, AiOutlineComment, AiOutlineHeart, AiOutlineMessage, AiOutlineShareAlt} from "react-icons/ai";
-import {FaSmile} from "react-icons/fa";
+import {
+    AiOutlineClose,
+    AiOutlineComment,
+    AiOutlineHeart,
+    AiOutlineMessage,
+    AiOutlineShareAlt,
+    AiOutlineSmile
+} from "react-icons/ai";
 import {AppInput} from "./AppInput";
 import {ActionModal} from "./ActionModal";
 
@@ -114,7 +120,7 @@ export const ModalPost = ({ onCloseClick }) => {
                         <p style={{ fontSize: '13px', fontWeight: 'bold', margin: '15px' }}>10, 455 likes</p>
                         <p style={{ color: 'grey', marginLeft: '15px', marginBottom: '20px' }}>5 days ago</p>
                         <div style={commentSectionContainer}>
-                            <FaSmile style={{ fontSize: 23, margin: '0 auto', marginTop: '10px' }} />
+                            <AiOutlineSmile style={{ fontSize: 23, margin: '0 auto', marginTop: '10px' }} />
                             <AppInput type="text" placeholder="Add a comment ..." customeStyle={commentInputStyle} />
                             <p style={postButtonStyle}>Post</p>
                         </div>
