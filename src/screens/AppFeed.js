@@ -2,9 +2,14 @@ import React, { useState, useEffect } from 'react'
 import { AppTopBar } from '../components/AppTopBar'
 import { AppPost } from '../components/AppPost'
 import { CircleImage } from '../components/CircleImage'
-import ProfilePicture from '../assets/img/profile.jpg'
 import { ActionModal } from '../components/ActionModal'
 import { ModalPost } from "../components/ModalPost"
+
+import JulianPic from "../assets/img/julian.jpg";
+import AionyPic from "../assets/img/aiony.jpg";
+import MichaelPic from "../assets/img/michael.jpg";
+import JuricaPic from "../assets/img/jurica.jpg";
+import KrilliPic from "../assets/img/krilli.jpg";
 
 export const AppFeed = () => {
 
@@ -51,26 +56,20 @@ export const AppFeed = () => {
         { actionModal && <ActionModal onCloseClick={() => setActionModal(false)} /> }
         <div style={postsContainerStyle}>
           <div style={{ display: 'grid', gridTemplateColumns: 'auto' }}>
-            <AppPost onOptionClick={() => setActionModal(true)} onImageClick={() => setShowModalPost(true)} />
-            <AppPost onOptionClick={() => setActionModal(true)} onImageClick={() => setShowModalPost(true)} />
-            <AppPost onOptionClick={() => setActionModal(true)} onImageClick={() => setShowModalPost(true)} />
-            <AppPost onOptionClick={() => setActionModal(true)} onImageClick={() => setShowModalPost(true)} />
-            <AppPost onOptionClick={() => setActionModal(true)} onImageClick={() => setShowModalPost(true)} />
-            <AppPost onOptionClick={() => setActionModal(true)} onImageClick={() => setShowModalPost(true)} />
-            <AppPost onOptionClick={() => setActionModal(true)} onImageClick={() => setShowModalPost(true)} />
-            <AppPost onOptionClick={() => setActionModal(true)} onImageClick={() => setShowModalPost(true)} />
-            <AppPost onOptionClick={() => setActionModal(true)} onImageClick={() => setShowModalPost(true)} />
-            <AppPost onOptionClick={() => setActionModal(true)} onImageClick={() => setShowModalPost(true)} />
-            <AppPost onOptionClick={() => setActionModal(true)} onImageClick={() => setShowModalPost(true)} />
+            <AppPost fullName="Julian" src={JulianPic} onOptionClick={() => setActionModal(true)} onImageClick={() => setShowModalPost(true)} />
+            <AppPost fullName="Aiony" src={AionyPic} onOptionClick={() => setActionModal(true)} onImageClick={() => setShowModalPost(true)} />
+            <AppPost fullName="Michael" src={MichaelPic} onOptionClick={() => setActionModal(true)} onImageClick={() => setShowModalPost(true)} />
+            <AppPost fullName="Jurica" src={JuricaPic} onOptionClick={() => setActionModal(true)} onImageClick={() => setShowModalPost(true)} />
+            <AppPost fullName="Krilli" src={KrilliPic} onOptionClick={() => setActionModal(true)} onImageClick={() => setShowModalPost(true)} />
           </div>
 
           {
             showExtra && <div style={{ minWidth: '300px', maxWidth: '300px' }} >
                             <div style={firstSideRow}>
-                              <CircleImage src={ProfilePicture} />
+                              <CircleImage src={AionyPic} />
                               <div style={{ display: 'block', margin: '15px', marginLeft: '20px' }}>
-                                <p style={{ marginBottom: '5px', fontSize: '13px', fontWeight: 'bold' }}>Jhon451</p>
-                                <p style={{ color: '#8E8E8E', fontSize: '13px' }}>Jhon Smith</p>
+                                <p style={{ marginBottom: '5px', fontSize: '13px', fontWeight: 'bold' }}>Aiony</p>
+                                <p style={{ color: '#8E8E8E', fontSize: '13px' }}>Aiony Doe</p>
                               </div>
                               <p style={{ color: '#0095f6', margin: '0 auto', marginTop: '15px', cursor: 'pointer', fontWeight: 'bold' }}>Switch</p>
                             </div>
@@ -81,37 +80,37 @@ export const AppFeed = () => {
                             </div>
 
                             <div style={{ display: 'grid', gridTemplateColumns: '20% 60% 20%', margin: '25px' }}>
-                              <CircleImage src={ProfilePicture} customeStyle={{ width: '30px', height: '30px' }} />
+                              <CircleImage src={JulianPic} customeStyle={{ width: '30px', height: '30px' }} />
                               <div style={{ display: 'block' }}>
-                                <p style={{ fontWeight: 'bold', marginBottom: '5px' }}>WillSmith</p>
-                                <p style={{ color: '#A4A4A4' }}>Followed by Angel558</p>
+                                <p style={{ fontWeight: 'bold', marginBottom: '5px' }}>Julian</p>
+                                <p style={{ color: '#A4A4A4' }}>Followed by Aiony</p>
                               </div>
                               <p style={{ fontSize: '12px', fontWeight: 'bold', color: '#0095f6', margin: '0 auto', marginTop: '10px' }}>Follow</p>
                             </div>
 
                             <div style={{ display: 'grid', gridTemplateColumns: '20% 60% 20%', margin: '25px' }}>
-                              <CircleImage src={ProfilePicture} customeStyle={{ width: '30px', height: '30px' }} />
+                              <CircleImage src={MichaelPic} customeStyle={{ width: '30px', height: '30px' }} />
                               <div style={{ display: 'block' }}>
-                                <p style={{ fontWeight: 'bold', marginBottom: '5px' }}>WillSmith</p>
-                                <p style={{ color: '#A4A4A4' }}>Followed by Angel558</p>
+                                <p style={{ fontWeight: 'bold', marginBottom: '5px' }}>Michael</p>
+                                <p style={{ color: '#A4A4A4' }}>Followed by Aiony</p>
                               </div>
                               <p style={{ fontSize: '12px', fontWeight: 'bold', color: '#0095f6', margin: '0 auto', marginTop: '10px' }}>Follow</p>
                             </div>
 
                             <div style={{ display: 'grid', gridTemplateColumns: '20% 60% 20%', margin: '25px' }}>
-                              <CircleImage src={ProfilePicture} customeStyle={{ width: '30px', height: '30px' }} />
+                              <CircleImage src={JuricaPic} customeStyle={{ width: '30px', height: '30px' }} />
                               <div style={{ display: 'block' }}>
-                                <p style={{ fontWeight: 'bold', marginBottom: '5px' }}>WillSmith</p>
-                                <p style={{ color: '#A4A4A4' }}>Followed by Angel558</p>
+                                <p style={{ fontWeight: 'bold', marginBottom: '5px' }}>Jurica</p>
+                                <p style={{ color: '#A4A4A4' }}>Followed by Julian</p>
                               </div>
                               <p style={{ fontSize: '12px', fontWeight: 'bold', color: '#0095f6', margin: '0 auto', marginTop: '10px' }}>Follow</p>
                             </div>
 
                             <div style={{ display: 'grid', gridTemplateColumns: '20% 60% 20%', margin: '25px' }}>
-                              <CircleImage src={ProfilePicture} customeStyle={{ width: '30px', height: '30px' }} />
+                              <CircleImage src={KrilliPic} customeStyle={{ width: '30px', height: '30px' }} />
                               <div style={{ display: 'block' }}>
-                                <p style={{ fontWeight: 'bold', marginBottom: '5px' }}>WillSmith</p>
-                                <p style={{ color: '#A4A4A4' }}>Followed by Angel558</p>
+                                <p style={{ fontWeight: 'bold', marginBottom: '5px' }}>Krilli</p>
+                                <p style={{ color: '#A4A4A4' }}>Followed by Julian</p>
                               </div>
                               <p style={{ fontSize: '12px', fontWeight: 'bold', color: '#0095f6', margin: '0 auto', marginTop: '10px' }}>Follow</p>
                             </div>

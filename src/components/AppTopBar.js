@@ -5,7 +5,7 @@ import { AiOutlineHeart, AiOutlineHome, AiOutlineMessage  } from 'react-icons/ai
 import { IoIosAddCircleOutline } from 'react-icons/io';
 import { ImSafari } from 'react-icons/im';
 import { CircleImage } from './CircleImage';
-import ProfilePicture from '../assets/img/profile.jpg'
+import AionyPic from "../assets/img/aiony.jpg";
 import { AddPost } from './AddPost';
 import { Link } from 'react-router-dom';
 import {LikesNotification} from "./LikesNotification";
@@ -64,7 +64,7 @@ export const AppTopBar = ({ customeStyle }) => {
                     <Link to="/explore"><ImSafari size={21} style={{ ...iconStyle, marginTop: '2px' }}/></Link>
                     <AiOutlineHeart size={25} style={iconStyle} onClick={() => setShowNotification(!showNotification)} />
                     <div onClick={() => setshowProfilInfo(!showProfilInfo)}>
-                        <CircleImage customeStyle={{ width: '20px', height: '20px', cursor: 'pointer' }} src={ProfilePicture} />
+                        <CircleImage customeStyle={{ width: '20px', height: '20px', cursor: 'pointer' }} src={AionyPic} />
                     </div>
                 </div>
             </div>

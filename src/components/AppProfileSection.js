@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import {AiOutlineSave, AiOutlineSetting, AiOutlineSwap, AiOutlineUser} from "react-icons/ai";
+import {Link} from "react-router-dom";
 
 export const AppProfileSection = () => {
 
@@ -7,10 +8,12 @@ export const AppProfileSection = () => {
 
     return (
         <div style={containerStyle}>
-            <div style={{ ...contentContainer, backgroundColor: backgroundColor }} onMouseOver={() => setBackGroundColor("grey")} onMouseLeave={() => setBackGroundColor("white")}>
-                <AiOutlineUser style={iconStyle} />
-                <p style={textStyle}>Profile</p>
-            </div>
+            <Link to="/profile" style={{ textDecoration: "none" }}>
+                <div style={{ ...contentContainer, backgroundColor: backgroundColor }} onMouseOver={() => setBackGroundColor("#FAFAFA")} onMouseLeave={() => setBackGroundColor("white")}>
+                    <AiOutlineUser style={iconStyle} />
+                    <p style={{ marginTop: "5px", color: "black", fontSize: "13px" }}>Profile</p>
+                </div>
+            </Link>
             <div style={contentContainer}>
                 <AiOutlineSave style={iconStyle} />
                 <p style={textStyle}>Saved</p>
@@ -24,7 +27,7 @@ export const AppProfileSection = () => {
                 <p style={textStyle}>Switch Accounts</p>
             </div>
             <div style={{ display: 'block', padding: '20px', cursor: 'pointer', borderTop: 'solid 1px #DBDBDB' }}>
-                <p style={textStyle}>Log Out</p>
+                <p style={{ ...textStyle, marginTop: "0px" }}>Log Out</p>
             </div>
         </div>
     )
@@ -43,7 +46,8 @@ const containerStyle = {
     overflowY: 'hidden',
     overflowX: 'hidden',
     zIndex: 99999,
-    boxShadow: '2px 3px rgba(0, 0, 0, 0.05)'
+    boxShadow: '2px 3px rgba(0, 0, 0, 0.05)',
+    borderRadius: "5px"
 }
 
 const contentContainer = {
@@ -54,9 +58,12 @@ const contentContainer = {
 }
 
 const textStyle = {
-    fontSize: '13px'
+    fontSize: '13px',
+    marginTop: '5px',
+    color: "black",
 }
 
 const iconStyle = {
-    fontSize: '18px'
+    fontSize: '18px',
+    color: "black"
 }

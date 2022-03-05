@@ -5,6 +5,12 @@ import {FaComment, FaImages} from "react-icons/fa";
 import {AiFillHeart} from "react-icons/ai";
 import {ModalPost} from "../components/ModalPost";
 
+import JulianPic from "../assets/img/julian.jpg";
+import AionyPic from "../assets/img/aiony.jpg";
+import MichaelPic from "../assets/img/michael.jpg";
+import JuricaPic from "../assets/img/jurica.jpg";
+import KrilliPic from "../assets/img/krilli.jpg";
+
 export const AppExplorer = () => {
 
     const [showHoverData, setShowHoverData] = useState(false);
@@ -36,22 +42,19 @@ export const AppExplorer = () => {
                         }
                     </div>
 
-                    <div style={{ ...imageContainer, backgroundImage: `url(${ProfilePicture})` }}>
+                    <div style={{ ...imageContainer, backgroundImage: `url(${JulianPic})` }}>
                         <FaImages size={27} style={{ float: 'right', marginRight: '10px', marginTop: '10px', color: 'white' }} />
                     </div>
-                    <div style={{ ...imageContainer, backgroundImage: `url(${ProfilePicture})` }}>
+                    <div style={{ ...imageContainer, backgroundImage: `url(${KrilliPic})` }}>
                         <FaImages size={27} style={{ float: 'right', marginRight: '10px', marginTop: '10px', color: 'white' }} />
                     </div>
-                    <div style={{ ...imageContainer, backgroundImage: `url(${ProfilePicture})` }}>
+                    <div style={{ ...imageContainer, backgroundImage: `url(${MichaelPic})` }}>
                         <FaImages size={27} style={{ float: 'right', marginRight: '10px', marginTop: '10px', color: 'white' }} />
                     </div>
-                    <div style={{ ...imageContainer, backgroundImage: `url(${ProfilePicture})` }}>
+                    <div style={{ ...imageContainer, backgroundImage: `url(${JuricaPic})` }}>
                         <FaImages size={27} style={{ float: 'right', marginRight: '10px', marginTop: '10px', color: 'white' }} />
                     </div>
-                    <div style={{ ...imageContainer, backgroundImage: `url(${ProfilePicture})` }}>
-                        <FaImages size={27} style={{ float: 'right', marginRight: '10px', marginTop: '10px', color: 'white' }} />
-                    </div>
-                    <div style={{ ...imageContainer, backgroundImage: `url(${ProfilePicture})` }}>
+                    <div style={{ ...imageContainer, backgroundImage: `url(${AionyPic})` }}>
                         <FaImages size={27} style={{ float: 'right', marginRight: '10px', marginTop: '10px', color: 'white' }} />
                     </div>
 
@@ -64,6 +67,7 @@ export const AppExplorer = () => {
 const mainContainer = {
     backgroundColor: '#FAFAFA',
     display: 'block',
+    height: "1000px"
 }
 
 const contentContainer = {

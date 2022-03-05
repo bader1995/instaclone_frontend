@@ -4,6 +4,12 @@ import { BiMessageDetail } from 'react-icons/bi'
 import { AppTopBar } from '../components/AppTopBar'
 import { CircleImage } from '../components/CircleImage'
 
+import JulianPic from "../assets/img/julian.jpg";
+import AionyPic from "../assets/img/aiony.jpg";
+import MichaelPic from "../assets/img/michael.jpg";
+import JuricaPic from "../assets/img/jurica.jpg";
+import KrilliPic from "../assets/img/krilli.jpg";
+
 export const AppConversations = () => {
 
   return (
@@ -27,41 +33,41 @@ export const AppConversations = () => {
                     <div style={{ display: 'grid', gridTemplateColumns: 'auto' }}>
                         
                         <div style={{ display: 'grid', gridTemplateColumns: '25% 75%', paddingLeft: '15px', paddingTop: '15px', minWidth: '250px' }}>
-                            <CircleImage />
+                            <CircleImage src={JulianPic} />
                             <div style={{ display: 'grid', gridTemplateColumns: 'auto' }}>
-                                <p style={{ fontSize: '14px', marginTop: '10px' }}>Will smith</p>
+                                <p style={{ fontSize: '14px', marginTop: '10px' }}>Julian</p>
                                 <p style={{ fontSize: '14px', color: '#DBDBDB' }}>You sent a message - 18h</p>
                             </div>
                         </div>
 
                         <div style={{ display: 'grid', gridTemplateColumns: '25% 75%', paddingLeft: '15px', paddingTop: '15px', minWidth: '250px' }}>
-                            <CircleImage />
+                            <CircleImage src={AionyPic} />
                             <div style={{ display: 'grid', gridTemplateColumns: 'auto' }}>
-                                <p style={{ fontSize: '14px', marginTop: '10px' }}>Will smith</p>
+                                <p style={{ fontSize: '14px', marginTop: '10px' }}>Aiony</p>
                                 <p style={{ fontSize: '14px', color: '#DBDBDB' }}>You sent a message - 18h</p>
                             </div>
                         </div>
 
                         <div style={{ display: 'grid', gridTemplateColumns: '25% 75%', paddingLeft: '15px', paddingTop: '15px', minWidth: '250px' }}>
-                            <CircleImage />
+                            <CircleImage src={MichaelPic} />
                             <div style={{ display: 'grid', gridTemplateColumns: 'auto' }}>
-                                <p style={{ fontSize: '14px', marginTop: '10px' }}>Will smith</p>
+                                <p style={{ fontSize: '14px', marginTop: '10px' }}>Michael</p>
                                 <p style={{ fontSize: '14px', color: '#DBDBDB' }}>You sent a message - 18h</p>
                             </div>
                         </div>
 
                         <div style={{ display: 'grid', gridTemplateColumns: '25% 75%', paddingLeft: '15px', paddingTop: '15px', minWidth: '250px' }}>
-                            <CircleImage />
+                            <CircleImage src={JuricaPic} />
                             <div style={{ display: 'grid', gridTemplateColumns: 'auto' }}>
-                                <p style={{ fontSize: '14px', marginTop: '10px' }}>Will smith</p>
+                                <p style={{ fontSize: '14px', marginTop: '10px' }}>Jurica</p>
                                 <p style={{ fontSize: '14px', color: '#DBDBDB' }}>You sent a message - 18h</p>
                             </div>
                         </div>
 
                         <div style={{ display: 'grid', gridTemplateColumns: '25% 75%', paddingLeft: '15px', paddingTop: '15px', minWidth: '250px' }}>
-                            <CircleImage />
+                            <CircleImage src={KrilliPic} />
                             <div style={{ display: 'grid', gridTemplateColumns: 'auto' }}>
-                                <p style={{ fontSize: '14px', marginTop: '10px' }}>Will smith</p>
+                                <p style={{ fontSize: '14px', marginTop: '10px' }}>Krilli</p>
                                 <p style={{ fontSize: '14px', color: '#DBDBDB' }}>You sent a message - 18h</p>
                             </div>
                         </div>

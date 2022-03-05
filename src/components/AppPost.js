@@ -1,21 +1,19 @@
 import React from 'react'
 import { CircleImage } from './CircleImage'
-import ProfilePicture from '../assets/img/profile.jpg'
-import { FaSmile, FaComment, FaFacebookMessenger, FaShare } from 'react-icons/fa';
 import { AppInput } from './AppInput';
 import { BiDotsHorizontalRounded } from 'react-icons/bi';
 import {AiOutlineComment, AiOutlineHeart, AiOutlineMessage, AiOutlineShareAlt, AiOutlineSmile} from "react-icons/ai";
 
-export const AppPost = ({ customeStyle, onOptionClick, onImageClick}) => {
+export const AppPost = ({ customeStyle, onOptionClick, onImageClick, src, fullName}) => {
   return (
     <div style={{ ...containerStyle, ...customeStyle }}>
         <div style={profileContainer}>
-            <CircleImage src={ProfilePicture} customeStyle={profilePictureStyle} />
-            <p style={labelStyle}>Jhon Smith</p>
+            <CircleImage src={src} customeStyle={profilePictureStyle} />
+            <p style={labelStyle}>{fullName}</p>
             <BiDotsHorizontalRounded style={optionsIconStyle} onClick={() => onOptionClick()} />
         </div>
         <div style={contentContainerStyle} onClick={() => onImageClick()}>
-          <img src={ProfilePicture} style={assetContentStyle} />
+          <img src={src} style={assetContentStyle} />
         </div>
         <div style={actionSectionStyle}>
           <AiOutlineHeart style={actionIconStyle} />
@@ -26,7 +24,7 @@ export const AppPost = ({ customeStyle, onOptionClick, onImageClick}) => {
         </div>
         <div style={interactionsStyle}>
           <p style={{ marginBottom: '10px' }}>12, 045 Likes</p>
-          <p style={{ marginBottom: '10px' }}><b>Jhon Smith</b> look at my dog he's cute</p>
+          <p style={{ marginBottom: '10px' }}><b>{ fullName }</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           <p style={{ color: 'grey', cursor: 'pointer' }}>View all 24 comments ...</p>
         </div>
         <div style={commentSectionContainer}>

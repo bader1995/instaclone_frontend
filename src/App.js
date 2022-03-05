@@ -3,6 +3,7 @@ import { AppFeed } from './screens/AppFeed';
 import { AppLogin } from './screens/AppLogin';
 import { AppConversations } from './screens/AppConversations';
 import { AppExplorer } from "./screens/AppExplorer";
+import { AppProfile } from "./screens/AppProfile";
 import {
   BrowserRouter as Router,
   Route,
@@ -18,6 +19,7 @@ function App() {
         <Route path="/login" element={<AppLogin />} />
         <Route path="/direct/inbox/" element={<AppConversations />} />
         <Route path="/explore" element={<AppExplorer />} />
+        <Route path="/profile" element={<AppProfile />} />
       </Routes>
     </Router>
   );
