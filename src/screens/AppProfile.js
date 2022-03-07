@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {AppTopBar} from "../components/AppTopBar";
 import {CircleImage} from "../components/CircleImage";
 import {AiOutlineSave, AiOutlineSetting, AiOutlineUser} from "react-icons/ai";
 import {BsPlusSquare} from "react-icons/bs";
+import { ActionSettingsModal } from '../components/ActionSettingsModal';
+
 import PostsPicture from "../assets/img/postsPicture.jpg";
 import DownloadFromApple from "../assets/img/downloadFromApple.png";
 import DownloadFromGoogle from "../assets/img/downloadFromGoogle.png";
@@ -10,8 +12,12 @@ import {AppFooter} from "../components/AppFooter";
 import AionyPic from "../assets/img/aiony.jpg";
 
 export const AppProfile = () => {
+
+    const [showActionModal, setShowActionModal] = useState(false)
+
     return (
         <div style={mainContainer}>
+            { showActionModal && <ActionSettingsModal onCloseClick={() => setShowActionModal(false)}/> }
             <AppTopBar />
             <div style={contentContainer}>
                 <CircleImage customeStyle={{ width: "150px", height: "150px" }} src={AionyPic} />
@@ -20,7 +26,7 @@ export const AppProfile = () => {
                     <div style={firstSection}>
                         <p style={{ fontSize: "20px", marginTop: "5px" }}>Aiony</p>
                         <button style={editButton}>Edit profile</button>
-                        <AiOutlineSetting style={{ fontSize: "25px", margin: "0 auto", cursor: "pointer" }} />
+                        <AiOutlineSetting style={{ fontSize: "25px", margin: "0 auto", cursor: "pointer" }} onClick={() => setShowActionModal(true)} />
                     </div>
 
                     <div style={secondSection}>
